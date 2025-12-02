@@ -1,20 +1,20 @@
 # # PART 1
-# with open("input.txt") as file:
-#     for line in file.readlines():
-#         ranges = [
-#             (int(r.split('-')[0]), int(r.split('-')[1])) for r in line.split(',')
-#         ]
+with open("input.txt") as file:
+    for line in file.readlines():
+        ranges = [
+            (int(r.split('-')[0]), int(r.split('-')[1])) for r in line.split(',')
+        ]
 
-#         # 2259304 values
-#         cnt = 0
-#         for l, r in ranges:
-#             for x in range(l, r + 1):
-#                 y = str(x)
-#                 if len(y) % 2 == 0:
-#                     k = int(len(y) / 2)
-#                     a, b = y[:k], y[k:]
-#                     cnt += int(y) if a == b else 0
-#         print(cnt)
+        # 2259304 values
+        cnt = 0
+        for l, r in ranges:
+            for x in range(l, r + 1):
+                y = str(x)
+                if len(y) % 2 == 0:
+                    k = int(len(y) / 2)
+                    a, b = y[:k], y[k:]
+                    cnt += int(y) if a == b else 0
+        print(cnt)
 
 
 # PART 2
