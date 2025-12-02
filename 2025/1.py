@@ -24,7 +24,6 @@ with open("input.txt", 'r') as file:
         dir = -1 if line[0] == 'L' else 1
         num *= dir
         nxt = cur + num
-        # print(cur, nxt)
         if (nxt <= 0 and cur - 1 >= 0) or (cur + 1 <= 100 and nxt >= 100):
             cnt += 1
         cur = (nxt + 100) % 100
