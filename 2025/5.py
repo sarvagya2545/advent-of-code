@@ -31,6 +31,10 @@ def is_item_present_in_intervals(item: int, intervals: List[Tuple[int,int]]) -> 
     return item >= l and item <= r
 
 
+def get_sum_of_ranges(intervals: List[Tuple[int, int]]) -> int:
+    return sum(r - l + 1 for l, r in intervals)
+
+
 with open("input.txt", "r") as file:
     intervals = []
     items = []
@@ -50,8 +54,12 @@ with open("input.txt", "r") as file:
 
     intervals = merge_intervals(intervals)
 
+    # Part 1
     count = 0
     for item in items:
         if is_item_present_in_intervals(item, intervals):
             count += 1
     print(count)
+
+    # Part 2
+    print(get_sum_of_ranges(intervals))
